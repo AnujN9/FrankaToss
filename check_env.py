@@ -8,10 +8,10 @@ from stable_baselines3 import DDPG
 
 env = gym.make("PandaThrow-v3", render_mode="human")
 
-models_dir = "models/DDPG_2"
+models_dir = "models/DDPG_latest"
 logdir = "logs"
 
-model_path = f"{models_dir}/140000.zip"
+model_path = f"{models_dir}/110000.zip"
 model = DDPG.load(model_path, env=env)
 
 episodes = 10
@@ -26,7 +26,6 @@ for ep in range(episodes):
         vec_env.render()
         action, _states = model.predict(obs, deterministic = True)
         obs, rewards, dones, infos = vec_env.step(action)
-        print(dones)
         time.sleep(.5)
 
 vec_env.close()
