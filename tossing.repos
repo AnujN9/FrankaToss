@@ -1,0 +1,13 @@
+repositories:
+  panda-gym:
+    type: git
+    url: git@github.com:AnujN9/panda-gym.git
+    version: main
+  toss_bot:
+    type: git
+    url: git@github.com:AnujN9/WinterProject.git
+    version: main
+  final-project-CarterDiOrio:
+    type: git
+    url: git@github.com:ME495-EmbeddedSystems/final-project-CarterDiOrio.git
+    version: main
