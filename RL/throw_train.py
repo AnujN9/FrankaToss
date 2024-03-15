@@ -5,6 +5,7 @@ import time
 from stable_baselines3 import SAC, HerReplayBuffer
 
 env = gym.make("PandaThrow-v3", control_type="joints")
+# env = gym.make("PandaThrow-v3")
 env.reset()
 
 t_val = int(time.time())

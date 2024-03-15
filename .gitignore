@@ -2,6 +2,6 @@
 .venv/**
 .pyc/**
 **/__pycache__/
-logs/*
-models/*
-previous/*
+**/logs/*
+**/models/*
+**/previous/*

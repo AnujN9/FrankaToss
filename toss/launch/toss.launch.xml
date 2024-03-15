@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="toss" exec="tossing" name="tossing">
+  </node>
+</launch>
