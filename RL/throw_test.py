@@ -5,17 +5,17 @@ import numpy as np
 from stable_baselines3 import SAC
 import csv
 
-env = gym.make("PandaThrow-v3", render_mode="human", control_type="joints")
-# env = gym.make("PandaThrow-v3", render_mode="human")
+# env = gym.make("PandaThrow-v3", render_mode="human", control_type="joints")
+env = gym.make("PandaThrow-v3", render_mode="human")
 env.reset()
 
-models_dir = "models/SAC_1710493867"
+# models_dir = "models/SAC_1710493867"
 # models_dir = "models/SAC_latest"
-# models_dir = "models/SAC_1710487905"
+models_dir = "models/SAC_1710487905"
 logdir = "logs"
 
 # 590000 was working well for 905
-model_path = f"{models_dir}/160000.zip"
+model_path = f"{models_dir}/590000.zip"
 model = SAC.load(model_path, env=env)
 
 episodes = 10
@@ -42,7 +42,7 @@ with open('ee_pose.csv', 'w') as file:
         print(f"{obs['observation'][0]}")
         while not done:
             vec_env.render()
-            time.sleep(0.7)
+            time.sleep(0.1)
             # print(step)
             action, _states = model.predict(obs, deterministic = True)
             obs, reward, done, info = vec_env.step(action)
